@@ -66,13 +66,81 @@ This is a simple REST API built with Go that allows you to perform CRUD (Create,
  - **Example Response**:
     ```json
         {
-        "id": "2",
-        "isbn": "85578",
-        "title": "Book2",
-        "author": {
-            "fname": "Arup",
-            "lname": "Das"
+            "id": "2",
+            "isbn": "85578",
+            "title": "Book2",
+            "author": {
+                "fname": "Arup",
+                "lname": "Das"
+                }
+        }
+ 
+    ```
+###  Create Books
+ - **Endpoint**: /api/books
+ - **Method**: `POST`
+ - **Description**: Create a new book and add it to the collection.
+ - **Example Request**: /api/books
+
+ - **Example Request Body**
+    ```json
+        {
+            "isbn": "90078",
+            "title": "New Book",
+            "author": {
+                "fname": "Chilian",
+                "lname": "Murphy"
+                }
+        }
+    ```
+ - **Example Response**:
+    ```json
+        {
+            "id": "60",
+            "isbn": "90078",
+            "title": "New Book",
+            "author": {
+                "fname": "Chilian",
+                "lname": "Murphy"
             }
         }
  
     ```
+
+###  Update Book
+ - **Endpoint**: /api/books/{id}
+ - **Method**: `UPDATE`
+ - **Description**: Update existing book and add it to the collection.
+ - **Example Request**: /api/books/60
+ - **Example Request Body**
+    ```json
+        {
+            "isbn": "90078",
+            "title": "Updated Book",
+            "author": {
+                "fname": "Chilian",
+                "lname": "Murphy"
+                }
+        }
+    ```
+ - **Example Response**:
+     ```json
+        {
+            "id": "60",
+            "isbn": "90078",
+            "title": "Updated Book",
+            "author": {
+                "fname": "Chilian",
+                "lname": "Murphy"
+            }
+        }
+ 
+    ```
+
+###  Delete Book
+ - **Endpoint**: /api/books/{id}
+ - **Method**: `DELETE`
+ - **Description**: Delete a book from the collection.
+ - **Example Request**: /api/books/0
+- **Example Request Body**
+    Deleted
